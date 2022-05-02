@@ -1,0 +1,108 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(#181818, #111111);
+}
+
+.titulo{
+    font-size: 85px;
+    color: rgb(92, 235, 92);
+    text-shadow: .1rem .1rem .8rem rgb(53, 95, 53);
+    animation: titulozin 4s, escalatitulo 1s;
+}
+
+@keyframes titulozin {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+@keyframes escalatitulo {
+    from{
+        transform:scale(10%);
+    }
+    to{
+        transform:scale(100%);
+    }
+}
+
+.containerInput{
+    background-color: rgba(75, 75, 75, 0.2);
+    padding: 15px;
+    margin: 34px 0;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 1px 3px 8px rgba(27, 27, 27, 0.5);
+}
+
+.containerInput input{
+    background-color: transparent;
+    border: 0;
+    font-size: 20px;
+    color: rgb(149, 252, 156);
+    outline: none;
+    margin-right: 8px;
+}
+
+.containerInput input::placeholder{
+    color: rgb(75, 109, 78);
+}
+
+.botaopesquisar{
+    color: rgb(167, 167, 167);
+    background-color: transparent;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.botaopesquisar:hover{
+    transform: scale(1.22);
+}
+
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(75, 75, 75, 0.2);
+    width: 400px;
+    border-radius: 8px;
+}
+
+.principal h2{
+    color: rgb(49, 255, 100);
+    text-shadow: .1rem .1rem .8rem rgb(48, 82, 48);
+    margin: 16px 0;
+    font-size: 30px;
+}
+
+.principal span{
+    color: rgb(233, 233, 233);
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+@media (max-width: 620px){
+    .titulo{
+        font-size: 60px;
+    }
+
+    .principal h2{
+        font-size: 22px;
+    }
+
+    .principal{
+        width: 80%;
+        min-height: 250px;
+    }
+}
