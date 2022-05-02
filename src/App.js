@@ -1,7 +1,28 @@
+import { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import './style.css';
+import React from 'react';
+import api from './servicos/api';
 
 function App() {
+
+  const [input, setInput] = useState('')
+
+  async function handleSearch(){
+
+  if(input === ''){
+    alert("Por favor, insira um CEP")
+    return;
+  }
+
+  try{
+    const reponse = await
+  }catch{
+
+  }
+
+  }
+
   return (
     <div className="container">
       <h1 className="titulo">Buscador de CEP</h1>
@@ -10,9 +31,11 @@ function App() {
         <input
         type="text"
         placeholder="Insira um CEP"
+        value={input}
+        onChange={(evento) => setInput(evento.target.value)}
         />
 
-        <button className="botaopesquisar">
+        <button className="botaopesquisar" onClick={handleSearch}>
            <FiSearch size={25}/>
         </button>
       </div>
