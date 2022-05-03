@@ -5,6 +5,7 @@
     align-items: center;
     flex-direction: column;
     background: linear-gradient(#181818, #111111);
+    /* background-image: url('servicos/NvL.gif'); */
 }
 
 .titulo{

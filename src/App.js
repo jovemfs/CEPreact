@@ -6,7 +6,8 @@ import api from './servicos/api';
 
 function App() {
 
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState('');
+  const [cep, setCep] = useState({});
 
   async function handleSearch(){
 
@@ -16,9 +17,12 @@ function App() {
   }
 
   try{
-    const reponse = await
+    const response = await api.get(`${input}/json`);
+    setCep(response.data)
+    setInput("");
   }catch{
-
+    alert("Nosso buscador nao encontrou este CEP! Sentimos muito :(");
+    setInput("")
   }
 
   }
@@ -40,15 +44,17 @@ function App() {
         </button>
       </div>
 
-      <main className='principal'>
-        <h2>CEP: 01825-173</h2>
-
-        <span>Rua para teste</span>
-        <span>Completo: complemento para teste</span>
-        <span>Vila Romana</span>
-        <span>Sao Paulo</span>
-
-      </main>
+      {Object.keys(cep).length > 0 && (
+        <main className='principal'>
+          <h2>CEP: {cep.cep}</h2>
+      
+          <span>{cep.logradouro}</span>
+          <span>Complemento: {cep.complemento}</span>
+          <span>{cep.bairro}</span>
+          <span>{cep.localidade} - {cep.uf}</span>
+      
+        </main>
+      )}
 
     </div>
   );
