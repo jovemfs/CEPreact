@@ -11,7 +11,7 @@
 .titulo{
     font-size: 85px;
     color: rgb(92, 235, 92);
-    text-shadow: .1rem .1rem .8rem rgb(53, 95, 53);
+    text-shadow: .1rem .1rem .8rem rgb(37, 65, 37);
     animation: titulozin 4s, escalatitulo 1s;
 }
 
